@@ -20,6 +20,56 @@ class Contact{
         self::initialization($contactId,$openingHours,$address,$phoneNum,$email);
     }
 
+    public function getContactId(): int
+    {
+        return $this->contactId;
+    }
+
+    public function setContactId(int $contactId): void
+    {
+        $this->contactId = $contactId;
+    }
+
+    public function getOpeningHours() : String
+    {
+        return $this->openingHours;
+    }
+
+    public function setOpeningHours(String $openingHours): void
+    {
+        $this->openingHours = $openingHours;
+    }
+
+    public function getAddress(): string
+    {
+        return $this->address;
+    }
+
+    public function setAddress(String $address): void
+    {
+        $this->address = $address;
+    }
+
+    public function getPhoneNum(): string
+    {
+        return $this->phoneNum;
+    }
+
+    public function setPhoneNum(string $phoneNum): void
+    {
+        $this->phoneNum = $phoneNum;
+    }
+
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): void
+    {
+        $this->email = $email;
+    }
+
     private function initialization($contactId,$openingHours,$address,$phoneNum,$email){
 
         if ($contactId < 0){
