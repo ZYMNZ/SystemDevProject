@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-    <label style="margin: auto"> ERROR PAGE ＞︿＜</label>
+    <label style="margin: auto"> ERROR PAGE TO BE DONE ＞︿＜</label>
 
 </body>
 </html>
