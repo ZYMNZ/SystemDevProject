@@ -95,7 +95,7 @@ class Dish{
             if ($results->num_rows > 0){
 
                 $dishFetchAssoc = $results->fetch_assoc();
-                
+
                 $this->dishId = $dishId;
                 $this->dishTitle = $dishFetchAssoc['dish_title'];
                 $this->dishDescription = $dishFetchAssoc['dish_description'];
