@@ -91,7 +91,7 @@ class Contact{
             $this->email = $email;
 
         }
-        if ($contactId > 0){
+        else if ($contactId > 0){
             $conn = databaseConnection();
             $sqlPrepareQuery = $conn->prepare(
                 "SELECT * FROM `contact` WHERE contact_id = ?");
