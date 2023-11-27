@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set('America/Toronto');
 $controllerPrefix = isset($_GET['controller']) ? $_GET['controller'] : "home";
 
 $controller = ucfirst($controllerPrefix) . "Controller";
