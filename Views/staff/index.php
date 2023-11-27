@@ -18,22 +18,20 @@
             height: 100vh;
         }
 
-        form input {
-            margin: 5px 0;
+        #container input {
+            margin: 5px;
             padding: 8px;
+            display: inline-block;
         }
     </style>
 </head>
 <body>
     <div id="container">
-    <!-- login form -->
-    <form id="loginForm" method="POST" action="main.php">
-        <h1>Login</h1>
-        <input type="text" id="loginUsername" name="username" placeholder="Username" required><br>
-        <input type="password" id="loginPassword" name="password" placeholder="Password" required><br>
-        <p><a href = "forgotpass.php">Forgot password? Click me</a></p>
-        <input type="submit" value="Login"> <!-- login up button should redirect to main.php -->
-    </form>
+        <h1>Have an account?</h1>  
+        <div>
+            <input type="button" value="Yes" onclick="location.href='login.php'">
+            <input type="button" value="No" onclick="location.href='signup.php'">
+        </div>
     </div>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Client Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -26,14 +26,14 @@
 </head>
 <body>
     <div id="container">
-    <!-- login form -->
-    <form id="loginForm" method="POST" action="main.php">
-        <h1>Login</h1>
-        <input type="text" id="loginUsername" name="username" placeholder="Username" required><br>
-        <input type="password" id="loginPassword" name="password" placeholder="Password" required><br>
-        <p><a href = "forgotpass.php">Forgot password? Click me</a></p>
-        <input type="submit" value="Login"> <!-- login up button should redirect to main.php -->
-    </form>
+        <h1>Welcome to Lumia</h1>
+
+        <!-- form for apartment number input -->
+        <form id="apartmentForm" method="POST" action="main.php">
+            <h4>Enter Your Apartment Number</h4>
+            <input type="text" id="apartmentNumber" name="apartmentNumber" placeholder="Apartment Number" required><br>
+            <input type="submit" value="Submit"> <!-- submit button should redirect to main.php -->
+        </form>
     </div>
 </body>
 </html>

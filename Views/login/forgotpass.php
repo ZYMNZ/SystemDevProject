@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Forgot Password</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -27,15 +27,15 @@
         // add password validation 
     </script>
 </head>
-<body> 
-    <div id="container">     
-        <!-- signup form -->
-        <form id="signupForm" method="POST" action="login.php">
-            <h1>Sign up</h1>
-            <input type="text" id="signupUsername" name="username" placeholder="Username" required><br>
-            <input type="password" id="signupPassword" name="password" placeholder="Password" required><br>
-            <input type="password" id="signupConfirmPassword" name="confirmPassword" placeholder="Confirm Password" required><br>
-            <input type="submit" value="Sign up"> <!-- sign up button should redirect to login.php -->
+<body>
+    <div id="container">
+        <!-- forgot password form -->
+        <form id="forgotPasswordForm" method="POST" action="login.php">
+            <h1>Reset Password</h1>
+            <input type="text" id="forgotUsername" name="username" placeholder="Username" required><br>
+            <input type="password" id="forgotPassword" name="password" placeholder="Password" required><br>
+            <input type="password" id="forgotConfirmPassword" name="confirmPassword" placeholder="Confirm Password" required><br>
+            <input type="submit" value="Sumbit"> <!-- submit button should redirect to login.php -->
         </form>
     </div>
 </body>
