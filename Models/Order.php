@@ -70,7 +70,7 @@ class Order{
            $this->dishId = $dishId;
         }
 
-        elseif ($orderId > 0)
+        else if ($orderId > 0)
         {
             $conn = databaseConnection();
             $sqlQuery = "SELECT * FROM `ORDER` WHERE order_id = ?";
@@ -81,6 +81,16 @@ class Order{
 
             if ($results->num_rows > 0){
 
+                $fetchAssoc = $results->fetch_assoc();
+                
+                $this->orderId = $orderId;
+                $this->orderDate = $fetchAssoc['order_date'];
+                $this->apartmentNum = $fetchAssoc['apartment_num'];
+                $this->username = $fetchAssoc['username'];
+                $this->status = $fetchAssoc['status'];
+                $this->userId = $fetchAssoc['user_id'];
+                $this->tableId = $fetchAssoc['table_id'];
+                $this->dishId = $fetchAssoc['dish_id'];
             }
         }
 
