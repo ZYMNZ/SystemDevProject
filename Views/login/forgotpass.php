@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forgot Password</title>
     <style>
+        <?php include_once "Views/shared/navbar.php"?>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
