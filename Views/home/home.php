@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
     <link rel="stylesheet" type="text/css" href="Views/styles/home.css">
+    <link rel="stylesheet" type="text/css" href="Views/styles/navbar_footer.css">
 </head>
 <body>
     <?php include_once "Views/shared/navbar.php"?>
@@ -50,11 +51,6 @@
     </section>
 
     <!-- contact section -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Opening Hours: 5:00 PM - 7:00 PM</p>
-        <p>Address: 15 Place de la Triade, Pointe-Claire, QC H9R 0A3</p>
-        <p>Phone: +1 (514) 695-6695</p>
-    </section>
+    <?php include_once "Views/shared/footer.php"?>
 </body>
 </html>

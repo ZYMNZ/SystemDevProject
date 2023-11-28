@@ -1,3 +1,5 @@
+
+/*NAVBAR STYLES*/
 .navbar {
     background: #FFCC8F;
     background-blend-mode: multiply;
@@ -10,4 +12,13 @@ img {
     @media all and (max-width: 1000px) {
         width: 60%;
     }
+}
+
+
+/*FOOTER STYLES*/
+
+#contact {
+    background-color: #eee;
+    padding: 20px;
+    text-align: center;
 }
