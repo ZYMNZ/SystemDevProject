@@ -14,6 +14,5 @@
         <p>Phone: +1 (514) 695-6695</p>
     </section>
 
-
 </head>
 </html>
