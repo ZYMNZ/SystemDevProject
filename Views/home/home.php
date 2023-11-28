@@ -4,35 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        section {
-            padding: 20px;
-        }
-
-        .product {
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin: 10px;
-            display: inline-block;
-            width: 200px;
-            text-align: left;
-        }
-
-        #contact {
-            background-color: #eee;
-            padding: 20px;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="Views/styles/home.css">
 </head>
 <body>
+    <?php include_once "Views/shared/navbar.php"?>
+
     <header>
         <h1>Lumia</h1>
         <h3>Private Retirement Home</h3>

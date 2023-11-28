@@ -1,0 +1,13 @@
+.navbar {
+    background: #FFCC8F;
+    background-blend-mode: multiply;
+    padding: 4%;
+}
+
+img {
+    width: 30%;
+
+    @media all and (max-width: 1000px) {
+        width: 60%;
+    }
+}
