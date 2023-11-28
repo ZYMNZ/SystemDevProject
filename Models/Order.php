@@ -82,7 +82,7 @@ class Order{
             if ($results->num_rows > 0){
 
                 $fetchAssoc = $results->fetch_assoc();
-                
+
                 $this->orderId = $orderId;
                 $this->orderDate = $fetchAssoc['order_date'];
                 $this->apartmentNum = $fetchAssoc['apartment_num'];
@@ -93,6 +93,5 @@ class Order{
                 $this->dishId = $fetchAssoc['dish_id'];
             }
         }
-
     }
 }

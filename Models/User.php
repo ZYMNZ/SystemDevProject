@@ -94,4 +94,25 @@ class User{
         }
     }
 
+    public function registerUser($pPostArray)
+    {
+
+    }
+
+    //1 we check if data is empty,
+    //2 if not empty => we insert it in the database
+    //3 we need to insert it in the user_usergroup
+        // to do so we need to send the user_id that was created then
+
+
+
 }
+
+
+
+
+
+
+
+
+
