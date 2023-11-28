@@ -72,7 +72,16 @@ class Order{
 
         elseif ($orderId > 0)
         {
-                
+            $conn = databaseConnection();
+            $sqlQuery = "SELECT * FROM `ORDER` WHERE order_id = ?";
+            $prepareQuery = $conn->prepare($sqlQuery);
+            $prepareQuery->bind_param("i",$orderId);
+            $prepareQuery->execute();
+            $results = $prepareQuery->get_result();
+
+            if ($results->num_rows > 0){
+
+            }
         }
 
     }
