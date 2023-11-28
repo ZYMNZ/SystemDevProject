@@ -9,11 +9,6 @@
 <body>
     <?php include_once "Views/shared/navbar.php"?>
 
-    <header>
-        <h1>Lumia</h1>
-        <h3>Private Retirement Home</h3>
-    </header>
-
     <!-- appetizers section -->
     <section id="appetizers">
         <h2>Appetizers</h2>
