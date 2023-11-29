@@ -12,7 +12,7 @@ function databaseConnection()
     if ($conn->connect_error){
         die("Connection killed" . $conn->connect_error);
     }
-    echo "Successfully connected";
+//    echo "Successfully connected";
 
     return $conn;
 

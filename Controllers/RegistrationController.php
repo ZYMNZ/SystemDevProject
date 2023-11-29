@@ -1,6 +1,6 @@
 <?php
 
-class RegisterController{
+class RegistrationController{
 
     function route()
     {

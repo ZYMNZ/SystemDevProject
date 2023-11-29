@@ -3,16 +3,16 @@ include_once "database.php";
 class User{
 
     private int $userId;
-    private String $username;
-    private String $password;
-    private String $apartment;
+    private ?String $username;
+    private ?String $password;
+    private ?int $apartment;
 
     public function __construct
     (
         $userId=-1,
         $username="",
         $password="",
-        $apartment=""
+        $apartment=-1
     ){
         self::initialization($userId,$username,$password,$apartment);
     }
@@ -47,12 +47,12 @@ class User{
         $this->password = $password;
     }
 
-    public function getApartment(): string
+    public function getApartment(): int
     {
         return $this->apartment;
     }
 
-    public function setApartment(string $apartment): void
+    public function setApartment(int $apartment): void
     {
         $this->apartment = $apartment;
     }
@@ -65,10 +65,7 @@ class User{
         }
         else if
         (
-            $userId>0
-            && strlen($username)
-            && strlen($password)
-            && strlen($apartment)
+            $userId > 0 && ( (strlen($username) > 0 && strlen($password) > 0) || $apartment> 0 )
         ){
             $this->userId = $userId;
             $this->username = $username;
@@ -89,14 +86,40 @@ class User{
                 $this->userId = $userFetchAssoc['user_id'];
                 $this->username = $userFetchAssoc['username'];
                 $this->password = $userFetchAssoc['password'];
-                $this->apartment = $userFetchAssoc['apartment'];
+                $this->apartment = $userFetchAssoc['apartment_num'];
             }
         }
     }
 
-    public function registerUser($pPostArray)
+    public static function registerUser($pPostArray)
     {
 
+    }
+
+    public static function validateUserByUsernamePassword($pUsername,$pPassword) : ?User
+    {
+        $conn = databaseConnection();
+        $sqlQuery = "SELECT * FROM `user` WHERE username = ? AND password = ?";
+        $prepareQuery = $conn->prepare($sqlQuery);
+        $prepareQuery->bind_param("ss",$pUsername,$pPassword);
+        $isSuccessful = $prepareQuery->execute();
+        var_dump($isSuccessful);
+//        if ($isSuccessful) {
+            $results = $prepareQuery->get_result();
+            var_dump($results);
+            if ($results->num_rows>0){
+                $fetchAssoc = $results->fetch_assoc();
+
+                $user = new User();
+                $user->userId = $fetchAssoc['user_id'];
+                $user->username = $fetchAssoc['username'];
+                $user->password = $fetchAssoc['password'];
+                $user->apartment = $fetchAssoc['apartment_num'];
+                var_dump($user);
+                return $user;
+            }
+//        }
+        return null;
     }
 
     //1 we check if data is empty,

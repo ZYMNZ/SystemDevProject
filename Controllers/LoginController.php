@@ -6,6 +6,7 @@ class LoginController{
         global $action;
 
         if ($action == "login" || $action == "forgotPass" || $action == "validation"){
+
             self::render($action);
         }
     }
