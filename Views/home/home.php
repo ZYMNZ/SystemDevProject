@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
     <link rel="stylesheet" type="text/css" href="Views/styles/home.css">
-    <link rel="stylesheet" type="text/css" href="Views/styles/navbar_footer.css">
+    <link rel="stylesheet" type="text/css" href="Views/styles/navbarFooter.css">
+    <link rel="stylesheet" type="text/css" href="Views/styles/shared.css">
+
+    <?php include_once "Views/shared/navbar.php"?>
 </head>
 <body>
-    <?php include_once "Views/shared/navbar.php"?>
+
 
     <!-- appetizers section -->
     <section id="appetizers">

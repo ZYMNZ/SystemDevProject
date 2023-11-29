@@ -5,7 +5,7 @@ class LoginController{
     {
         global $action;
 
-        if ($action === "login"){
+        if ($action == "login" || $action == "forgotPass" || $action == "validation"){
             self::render($action);
         }
     }
@@ -13,6 +13,6 @@ class LoginController{
     function render($action,$dataSent=[])
     {
         extract($dataSent);
-        include_once "Views/login/$action";
+        include_once "Views/login/$action.php";
     }
 }

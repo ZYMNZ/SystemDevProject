@@ -1,0 +1,13 @@
+
+
+form input {
+    margin: 5px 0;
+    padding: 8px;
+}
+
+/*under test*/
+@media (max-width: 600px) {
+    .responsive-form input[type="text"], .responsive-form input[type="password"]{
+        font-size: 25px;
+    }
+}
