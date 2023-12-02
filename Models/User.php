@@ -93,9 +93,22 @@ class User{
 
     public static function registerUser($pPostArray)
     {
+        $result = self::createUser($pPostArray);
 
     }
 
+    //under progress
+    private static function createUser($pPostArray) : array
+    {
+        $conn = databaseConnection();
+        $sqlQuery = "INSERT INTO `user` (username,password) VALUES (?,md5(?))";
+        $prepareQuery = $conn->prepare($sqlQuery);
+        $prepareQuery->bind_param("ss",$pPostArray['username'],$pPostArray['password']);
+
+    }
+
+    //Done works perfectly, been tested
+    // In Login Page, checks if the user exists
     public static function validateUserByUsernamePassword($pUsername,$pPassword) : ?User
     {
         $conn = databaseConnection();

@@ -14,8 +14,8 @@
     <div id="container">
         <h1>Have an account?</h1>  
         <div>
-            <input type="button" value="Yes" onclick="location.href='?controller=login&action=login'">
-            <input type="button" value="No" onclick="location.href='?controller=registration&action=registration'">
+            <input type="button" class="displayBlock backgroundColorAndRadius" value="Yes" onclick="location.href='?controller=login&action=login'">
+            <input type="button" class="displayBlock backgroundColorAndRadius" value="No" onclick="location.href='?controller=registration&action=registration'">
         </div>
     </div>
 </body>

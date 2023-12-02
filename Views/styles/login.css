@@ -1,13 +1,21 @@
 
 
-form input {
-    margin: 5px 0;
-    padding: 8px;
-}
-
 /*under test*/
 @media (max-width: 600px) {
     .responsive-form input[type="text"], .responsive-form input[type="password"]{
         font-size: 25px;
     }
 }
+
+input {
+    width: 120%;
+    padding: 3%;
+    margin-right: 20%;
+
+    @media all and (max-width: 1000px) {
+        width: unset;
+        padding: unset;
+        margin-right: unset;
+    }
+}
+

@@ -14,13 +14,13 @@
         <!-- forgot password form -->
         <form id="forgotPasswordForm" method="POST" action="?controller=login&action=login">
             <h1>Reset Password</h1>
-            <input type="text" id="forgotUsername" name="username" placeholder="Username" required><br>
-            <input type="password" id="forgotPassword" name="password" placeholder="Password" required><br>
-            <input type="password" id="forgotConfirmPassword" name="confirmPassword" placeholder="Confirm Password" required><br>
+            <input type="text" id="forgotUsername" name="username" placeholder="Username" class="TFborderRadiusAndColor" required><br>
+            <input type="password" id="forgotPassword" name="password" placeholder="Password" class="TFborderRadiusAndColor" required><br>
+            <input type="password" id="forgotConfirmPassword" name="confirmPassword" placeholder="Confirm Password" class="TFborderRadiusAndColor" required><br>
             <br>
-            <input type="submit" value="Submit"> <!-- submit button should redirect to login.php -->
+            <input class="submitButton" type="submit" value="Submit"> <!-- submit button should redirect to login.php -->
         </form>
-        <a href="?controller=login&action=login"><button style="padding: 8px 14px; margin-right:14%; ">Back</button></a>
+        <a href="?controller=login&action=login"><button class="backgroundColorAndRadius backButton" >Back</button></a>
     </div>
 </body>
 </html>

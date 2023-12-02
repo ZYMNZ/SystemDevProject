@@ -12,3 +12,35 @@ body{
     height: 70vh;
 }
 
+form input {
+    margin: 6px 0;
+    padding: 8px;
+}
+
+.submitButton{
+    border-radius: 25px;
+    width: 60%;
+    background-color: #FFCC8F;
+}
+
+/*for input text field*/
+.TFborderRadiusAndColor{
+    border-radius: 16px;
+    border-color: #FFCC8F;
+    border-width: medium;
+}
+
+/*back button*/
+.backButton{
+    padding: 8px 14px;
+    margin-right:14%;
+    width: 100px;
+}
+.backgroundColorAndRadius{
+    background-color: #FFCC8F;
+    border-radius: 25px;
+}
+
+.displayBlock{
+    display: block;
+}
