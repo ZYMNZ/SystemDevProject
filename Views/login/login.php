@@ -16,7 +16,7 @@
 
     <div id="container">
     <!-- login form -->
-        <form id="loginForm" method="POST" action="/?controller=login&action=validation">
+        <form id="loginForm" method="POST" action="?controller=login&action=validation">
             <h1>Login</h1>
             <input type="text" id="loginUsername" name="username" placeholder="Username" class="TFborderRadiusAndColor" required><br>
             <input type="password" id="loginPassword" name="password" placeholder="Password" class="TFborderRadiusAndColor" required><br>

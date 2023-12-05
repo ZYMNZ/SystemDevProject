@@ -5,9 +5,10 @@ class UserController{
     {
         global $action;
 
-        if ($action === "haveAccount" || $action === "client"){
+        if ($action === "haveAccount" || $action === "client" || $action === "addContact" || $action === "addDish"){
             self::render($action);
         }
+
     }
 
     function render($action,$dataSent=[])
