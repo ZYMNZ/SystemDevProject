@@ -1,10 +1,9 @@
 <?php
-
-class HomeController{
+class ErrorController{
     function route()
     {
         global $action;
-        if ($action=="home"){
+        if ($action=="error"){
             self::render($action);
         }
 
@@ -13,6 +12,6 @@ class HomeController{
     function render($action, $dataSent=[])
     {
         extract($dataSent);
-        include_once "Views/home/$action.php";
+        include_once "Views/error/$action.php";
     }
 }

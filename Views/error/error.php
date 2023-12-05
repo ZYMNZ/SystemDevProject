@@ -12,5 +12,8 @@
 <body>
     <label style="margin: auto"> ERROR PAGE TO BE DONE ＞︿＜</label>
 
+    <a href="?controller=user&action=haveAccount"><button class="backgroundColorAndRadius backButton" >Back STAFF</button></a>
+    <a href="?controller=user&action=client"><button class="backgroundColorAndRadius backButton" >Back CLIENT</button></a>
+
 </body>
 </html>
