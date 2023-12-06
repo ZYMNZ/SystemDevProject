@@ -1,0 +1,16 @@
+textarea {
+    width: 50%;
+    height: 117px;
+    font-size: larger;
+
+    @media all and (max-width: 1000px) {
+        width: 80%;
+    }
+}
+
+.backButtonEditCategory{
+    padding: 8px 14px;
+    width: 100px;
+    font-size: larger;
+}
+

@@ -5,7 +5,7 @@ class UserController{
     {
         global $action;
 
-        if ($action === "haveAccount" || $action === "client" || $action === "addContact" || $action === "editCategory"){
+        if ($action === "haveAccount" || $action === "client" || $action === "addContact" || $action === "Category" || $action === "editCategory"){
             self::render($action);
         }
 

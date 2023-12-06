@@ -17,10 +17,18 @@ form input {
     padding: 8px;
 }
 
-.submitButton{
+.submitButton {
     border-radius: 25px;
-    width: 60%;
+    width: 20%;
     background-color: #FFCC8F;
+    font-size: x-large;
+
+    @media all and (max-width: 1000px) {
+        border-radius: 25px;
+        width: 40%;
+        background-color: #FFCC8F;
+        font-size: x-large;
+    }
 }
 
 /*for input text field*/
@@ -28,6 +36,7 @@ form input {
     border-radius: 16px;
     border-color: #FFCC8F;
     border-width: medium;
+    font-size: larger;
 }
 
 /*back button*/

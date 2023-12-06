@@ -1,5 +1,44 @@
 .dishImage{
     margin: auto;
     width: 50%;
+    /*border: 3px solid green;*/
+    /*border-radius: 25px;*/
     padding: 10px;
+}
+
+.dishBorder{
+    border: 3px solid #FFCC8F;
+    border-radius: 15px;
+    width: 83%;
+    margin: 5% 0;
+}
+
+.dishTitle{
+    color: #FFCC8F;
+    font-size: 40px;
+    -webkit-text-stroke: 1px black; /* width and color */
+    /*font-family: sans; color: yellow;*/
+}
+
+.dishDescription{
+    text-align: left;
+    font-size: larger;
+}
+
+.descriptionDiv{
+    margin: auto;
+    width: 50%;
+
+}
+
+.dishButton{
+    background-color: #FFCC8F;
+    border-radius: 25px;
+    font-size: medium;
+}
+
+.uploadButton{
+    border-radius: 25px;
+    width: 40%;
+    background-color: #FFCC8F;
 }
