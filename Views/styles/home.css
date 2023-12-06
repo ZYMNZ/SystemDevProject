@@ -10,3 +10,67 @@ section {
     width: 200px;
     text-align: left;
 }
+
+.fixedP {
+    color: black;
+    font-weight: bold;
+}
+
+.fixedP span.highlight {
+    color: red;
+}
+
+label.highlight {
+    color: orange;
+    font-weight: bold;
+}
+
+
+.imageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imageContainer img {
+    width: 200px;
+    height: auto;
+    margin: 5px 0;
+}
+
+
+
+.fixedP2 {
+    color: orange;
+    font-weight: bold;
+}
+
+.solid {
+    border: 1px solid;
+}
+
+.orange {
+    border-color: orange;
+}
+
+.sectionTitle {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+    margin: 20px 0;
+}
+
+.sectionTitle::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: orange;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}

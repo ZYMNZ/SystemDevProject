@@ -12,6 +12,24 @@
 </head>
 <body>
 
+<div class="fixedHome">
+
+    <p class="fixedP">Step into a world of culinary delight at <span class="highlight">Lumia</span>, where every dish is a masterpiece and every meal is a journey through exquisite flavors.</p>
+    <label class="highlight">What are we cooking?</label>
+    <figure class="imageContainer">
+        <img src="views/images/vege.jpg" alt="Vegetables">
+        <img src="views/images/salad.jpg" alt="Salad">
+    </figure>
+    <p class="fixedP2">We produce pastries and confections “like at home” - without the addition of any preservatives, dyes; formula as close as possible to homemade food.</p>
+    <hr class="solid orange">
+    <h3 class="sectionTitle">Tasty.</h3>
+    <h3 class="sectionTitle">Quick.</h3>
+    <figure class="imageContainer">
+        <img src="views/images/girlEat.jpg" alt="Girl eating">
+    </figure>
+    <hr class="solid orange">
+
+</div>
 
     <!-- appetizers section -->
     <section id="appetizers">
