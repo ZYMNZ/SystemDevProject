@@ -1,11 +1,13 @@
 <?php
 include_once "database.php";
+include_once "Models/UserRole.php";
+include_once "Models/Role.php";
 class User{
 
     private int $userId;
-    private ?String $username;
-    private ?String $password;
-    private ?int $apartment;
+    private String $username;
+    private String $password;
+    private int $apartment;
 
     public function __construct
     (
@@ -73,7 +75,7 @@ class User{
             $this->apartment = $apartment;
         }
         else if($userId>0){
-            $conn = databaseConnection();
+            $conn = openDatabaseConnection();
             $prepareQuery = $conn->prepare("SELECT * FROM `user` WHERE user_id = ?");
             $prepareQuery->bind_param("i",$userId);
             $prepareQuery->execute();
@@ -91,27 +93,59 @@ class User{
         }
     }
 
-    public static function registerUser($pPostArray)
+    //registering Admin
+    public static function registerAdmin($pPostArray): ?bool
     {
-        $result = self::createUser($pPostArray);
-
+        $isTaken = self::isUsernameTaken($pPostArray['username']);
+        if (!$isTaken) {
+            $result = self::createAdmin($pPostArray);
+            if ($result['isSuccessful']) {
+                $role = Role::getRoleByName('admin');
+                return UserRole::createUserRole($result['newRegisteredUserId'], $role->getRoleId());
+            }
+        }
+        return false;
     }
-
-    //under progress
-    private static function createUser($pPostArray) : array
+    private static function createAdmin($pPostArray) : array
     {
-        $conn = databaseConnection();
+        $conn = openDatabaseConnection();
         $sqlQuery = "INSERT INTO `user` (username,password) VALUES (?,md5(?))";
         $prepareQuery = $conn->prepare($sqlQuery);
         $prepareQuery->bind_param("ss",$pPostArray['username'],$pPostArray['password']);
-
+        $isSuccessful = $prepareQuery->execute();
+        $userId = $conn->insert_id;
+        $conn->close();
+        $prepareQuery->close();
+        return [
+          'isSuccessful' => $isSuccessful,
+          'newRegisteredUserId' => $userId
+        ];
     }
+
+    private static function isUsernameTaken($pUsername): bool  //check if the username is already in the DB
+    {
+        $conn = openDatabaseConnection();
+        $sql = "SELECT * FROM `user` WHERE username = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('s',$pUsername);
+        $stmt->execute();
+        $results = $stmt->get_result();
+        if ($results->num_rows > 0){
+            return true;
+        }
+        return false;
+    }
+
+
+    // registering Resident
+
+
 
     //Done works perfectly, been tested
     // In Login Page, checks if the user exists
     public static function validateUserByUsernamePassword($pUsername,$pPassword) : ?User
     {
-        $conn = databaseConnection();
+        $conn = openDatabaseConnection();
         $sqlQuery = "SELECT * FROM `user` WHERE username = ? AND password = ?";
         $prepareQuery = $conn->prepare($sqlQuery);
         $prepareQuery->bind_param("ss",$pUsername,$pPassword);

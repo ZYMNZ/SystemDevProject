@@ -72,7 +72,7 @@ class Order{
 
         else if ($orderId > 0)
         {
-            $conn = databaseConnection();
+            $conn = openDatabaseConnection();
             $sqlQuery = "SELECT * FROM `ORDER` WHERE order_id = ?";
             $prepareQuery = $conn->prepare($sqlQuery);
             $prepareQuery->bind_param("i",$orderId);

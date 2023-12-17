@@ -17,9 +17,15 @@
 <body>
     <div id="container">
         <!-- signup form -->
-        <form id="registrationForm" method="POST" action="?controller=login&action=validation">
+        <form id="registrationForm" method="POST" action="/?controller=registration&action=registrationValidation">
             <h1>Sign up</h1>
             <label style="color: black; display: block; font-size: large"><b>Click TWICE</b> on submit <b>AFTER</b> inputs are entered correctly for <u>confirmation</u></label>
+            <?php
+            if (isset($_SESSION['error']) && $_SESSION['error'] === 'Sorry the USERNAME is taken, try another one!'){
+                echo " <label class='invalidInputLabel'> {$_SESSION['error']} </label>";
+                unset($_SESSION['error']);
+            }
+            ?>
             <input type="text" id="signupUsername" name="username" placeholder="Username" class="tFBorderRadiusAndColor" required><br>
             <label class="invalidInputLabel displayBlock displayNone" name="errorUsernameLabel"></label>
             <input type="password" id="signupPassword" name="password" placeholder="Password" class="tFBorderRadiusAndColor" required><br>
@@ -27,7 +33,6 @@
             <input type="password" id="signupConfirmPassword" name="confirmPassword" placeholder="Confirm Password" class="tFBorderRadiusAndColor" required><br>
             <label class="invalidInputLabel displayBlock displayNone" name="notMatchingPasswordLabel"></label>
             <input class="submitButton" id="submitbutton" name="submit" type="submit" value="Sign up">
-
             <!-- sign up button should redirect to validation.php -->
         </form>
         <a href="?controller=user&action=haveAccount"><button class="backgroundColorAndRadius backButton">Back</button></a>

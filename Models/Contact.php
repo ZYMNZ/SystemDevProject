@@ -92,7 +92,7 @@ class Contact{
 
         }
         else if ($contactId > 0){
-            $conn = databaseConnection();
+            $conn = openDatabaseConnection();
             $sqlPrepareQuery = $conn->prepare(
                 "SELECT * FROM `contact` WHERE contact_id = ?");
             $sqlPrepareQuery->bind_param('i', $contactId);

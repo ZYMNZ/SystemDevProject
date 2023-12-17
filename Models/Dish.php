@@ -86,7 +86,7 @@ class Dish{
         }
         else if($dishId>0)
         {
-            $conn = databaseConnection();
+            $conn = openDatabaseConnection();
             $sqlPrepare = $conn->prepare("SELECT * FROM `dish` WHERE dish_id = ?");
             $sqlPrepare->bind_param("i",$dishId);
             $sqlPrepare->execute();
