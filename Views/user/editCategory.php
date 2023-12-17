@@ -20,7 +20,7 @@
                 Dish Title:
             </label>
             <br>
-            <input type="text" name="dishTitle" value="Soup" class="TFborderRadiusAndColor">
+            <input type="text" name="dishTitle" value="Soup" class="tFBorderRadiusAndColor">
         </div>
 
         <br>

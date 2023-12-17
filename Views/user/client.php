@@ -17,7 +17,7 @@
         <!-- form for apartment number input -->
         <form id="apartmentForm" method="POST" action="main.php">
             <h4>Enter Your Apartment Number</h4>
-            <input type="text" id="apartmentNumber" name="apartmentNumber" placeholder="Apartment Number" class="TFborderRadiusAndColor" required><br>
+            <input type="text" id="apartmentNumber" name="apartmentNumber" placeholder="Apartment Number" class="tFBorderRadiusAndColor" required><br>
             <input type="submit" class="submitButton" value="Submit"> <!-- submit button should redirect to main.php -->
         </form>
     </div>

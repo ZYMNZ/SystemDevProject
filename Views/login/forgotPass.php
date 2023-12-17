@@ -14,9 +14,9 @@
         <!-- forgot password form -->
         <form id="forgotPasswordForm" method="POST" action="?controller=login&action=login">
             <h1>Reset Password</h1>
-            <input type="text" id="forgotUsername" name="username" placeholder="Username" class="TFborderRadiusAndColor" required><br>
-            <input type="password" id="forgotPassword" name="password" placeholder="Password" class="TFborderRadiusAndColor" required><br>
-            <input type="password" id="forgotConfirmPassword" name="confirmPassword" placeholder="Confirm Password" class="TFborderRadiusAndColor" required><br>
+            <input type="text" id="forgotUsername" name="username" placeholder="Username" class="tFBorderRadiusAndColor" required><br>
+            <input type="password" id="forgotPassword" name="password" placeholder="Password" class="tFBorderRadiusAndColor" required><br>
+            <input type="password" id="forgotConfirmPassword" name="confirmPassword" placeholder="Confirm Password" class="tFBorderRadiusAndColor" required><br>
             <br>
             <input class="submitButton" type="submit" value="Submit"> <!-- submit button should redirect to login.php -->
         </form>

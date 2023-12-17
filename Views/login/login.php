@@ -18,8 +18,8 @@
     <!-- login form -->
         <form id="loginForm" method="POST" action="?controller=login&action=validation">
             <h1>Login</h1>
-            <input type="text" id="loginUsername" name="username" placeholder="Username" class="TFborderRadiusAndColor" required><br>
-            <input type="password" id="loginPassword" name="password" placeholder="Password" class="TFborderRadiusAndColor" required><br>
+            <input type="text" id="loginUsername" name="username" placeholder="Username" class="tFBorderRadiusAndColor" required><br>
+            <input type="password" id="loginPassword" name="password" placeholder="Password" class="tFBorderRadiusAndColor" required><br>
             <p><a href = "?controller=login&action=forgotPass">Forgot password? Click me</a></p>
             <input class="submitButton" type="submit" value="Login"> <!-- login up button should redirect to validation.php -->
         </form>

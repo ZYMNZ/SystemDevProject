@@ -19,7 +19,6 @@ form input {
 
 .submitButton {
     border-radius: 25px;
-    width: 20%;
     background-color: #FFCC8F;
     font-size: x-large;
 
@@ -32,7 +31,7 @@ form input {
 }
 
 /*for input text field*/
-.TFborderRadiusAndColor{
+.tFBorderRadiusAndColor{
     border-radius: 16px;
     border-color: #FFCC8F;
     border-width: medium;
@@ -52,4 +51,21 @@ form input {
 
 .displayBlock{
     display: block;
+}
+
+.displayNone{
+    display: none;
+}
+
+/*Invalid input field border color*/
+.invalidInput {
+    border-color: red;
+
+}
+
+/*Invalid input label color*/
+.invalidInputLabel {
+    color: red;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }

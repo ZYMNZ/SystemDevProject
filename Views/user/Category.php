@@ -25,7 +25,7 @@
             <input class="uploadButton " type="submit" value="Upload">
         </form>
         <br>
-        <input type="text" id="dishTitle" name="title" placeholder="Dish Title" class="TFborderRadiusAndColor" required value="Appetizer" style="text-align: center">
+        <input type="text" id="dishTitle" name="title" placeholder="Dish Title" class="tFBorderRadiusAndColor" required value="Appetizer" style="text-align: center">
 <!--        <br>-->
 
         <br>

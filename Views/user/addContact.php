@@ -15,8 +15,8 @@
         
         <form id="addContactForm" method="POST" action="?controller=contact&action=save">
             <h1>Add Contact</h1>
-            <input type="text" id="contactTitle" name="title" placeholder="Contact Title" class="TFborderRadiusAndColor" required><br>
-            <textarea id="contactDescription" name="description" placeholder="Contact Info" class="TFborderRadiusAndColor" required></textarea><br>
+            <input type="text" id="contactTitle" name="title" placeholder="Contact Title" class="tFBorderRadiusAndColor" required><br>
+            <textarea id="contactDescription" name="description" placeholder="Contact Info" class="tFBorderRadiusAndColor" required></textarea><br>
             <input class="submitButton" type="submit" value="Save">
         </form>
 
