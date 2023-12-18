@@ -6,7 +6,9 @@
     <title>Dish</title>
 
     <link rel="stylesheet" type="text/css" href="Views/styles/category.css"> <!-- Create a new CSS file for dish styles -->
+    <link rel="stylesheet" type="text/css" href="Views/styles/navbarFooter.css">
     <link rel="stylesheet" type="text/css" href="Views/styles/shared.css">
+    <link rel="stylesheet" type="text/css" href="Views/styles/home.css">
     <?php include_once "Views/shared/navbar.php"?>
 </head>
 <body>

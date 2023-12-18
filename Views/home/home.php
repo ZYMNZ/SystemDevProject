@@ -35,11 +35,24 @@
     <section id="appetizers">
         <h2>Appetizers</h2>
         <div class="product">
-            <img src="Views/images/appetizer1.jpg" alt="Appetizer 1">
-            <section>
-                <h3>Appetizer 1</h3>
-                <p>Description of Appetizer 1.</p>
-            </section>
+            <div class="imageAndEditButton dishImageHomePage">
+                <img src="Views/images/appetizer1.jpg" alt="Appetizer 1" class="">
+                <a ><button>Edit</button></a>
+            </div>
+            <div class="dishListing">
+                <?php // START LOOP ?>
+
+                <div style="border: 1px solid #000; display: block; margin:5% 0 ">
+                    <div class="titleWithAddButton">
+                        <h3>Appetizer 1 <?php ?> </h3>
+                        <button>Add</button>
+                    </div>
+                    <p>Description of Appetizer 1. <?php ?></p>
+                </div>
+
+                <?php //END LOOP ?>
+            </div>
+
         </div>
     </section>
 
@@ -47,9 +60,25 @@
     <section id="mainCourse">
         <h2>Main Course</h2>
         <div class="product">
-            <img src="Views/images/main_course1.jpg" alt="Main Course 1">
-            <h3>Main Course 1</h3>
-            <p>Description of Main Course 1.</p>
+            <div class="imageAndEditButton dishImageHomePage">
+                <img src="Views/images/main_course1.jpg" alt="Main Course 1">
+                <a ><button>Edit</button></a>
+            </div>
+            <div class="dishListing">
+                <?php // START LOOP ?>
+
+                <div style="border: 1px solid #000; display: block; margin:5% 0 ">
+                    <div class="titleWithAddButton">
+                        <h3>Main Course 1 <?php ?> </h3>
+                        <button>Add</button>
+                    </div>
+                    <p>Description of Main Course 1.</p>
+                </div>
+
+                <?php //END LOOP ?>
+            </div>
+
+
         </div>
     </section>
 
@@ -57,23 +86,49 @@
     <section id="dessert">
         <h2>Dessert</h2>
         <div class="product">
-            <img src="Views/images/desserts1.jpg" alt="Dessert 1">
-            <h3>Dessert 1</h3>
-            <p>Description of Dessert 1.</p>
+            <div class="imageAndEditButton dishImageHomePage">
+                <img src="Views/images/desserts1.jpg" alt="Dessert 1">
+                <a ><button>Edit</button></a>
+            </div>
+            <div class="dishListing">
+                <?php // START LOOP ?>
+
+                <div style="border: 1px solid #000; display: block; margin:5% 0 ">
+                    <div class="titleWithAddButton">
+                        <h3>Dessert 1 <?php ?> </h3>
+                        <button>Add</button>
+                    </div>
+                    <p>Description of Dessert 1.</p>
+                </div>
+
+                <?php //END LOOP ?>
+            </div>
+
+
         </div>
     </section>
 
     <!-- beverages section -->
     <section id="beverages">
         <h2 style="">Beverages</h2>
-<!--        <div style="display: inline-flex;align-items: center;justify-content: center;">-->
-<!--        </div>-->
         <div class="product">
-        <img src="Views/images/beverage1.jpg" alt="Beverage 1" style="border-radius: 7pc;border: 2px solid #000;">
+            <div class="imageAndEditButton dishImageHomePage">
+                <img src="Views/images/beverage1.jpg" alt="Beverage 1" style="border-radius: 7pc;border: 2px solid #000;">
+                <a ><button>Edit</button></a>
+            </div>
+            <div class="dishListing">
+                <?php // START LOOP ?>
 
+                <div style="border: 1px solid #000; display: block; margin:5% 0 ">
+                    <div class="titleWithAddButton">
+                        <h3>Beverage 1 <?php ?> </h3>
+                        <button>Add</button>
+                    </div>
+                    <p>Description of Beverage 1.</p>
+                </div>
 
-            <h3>Beverage 1</h3>
-            <p>Description of Beverage 1.</p>
+                <?php //END LOOP ?>
+            </div>
         </div>
     </section>
 

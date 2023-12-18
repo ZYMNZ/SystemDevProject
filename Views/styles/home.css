@@ -7,8 +7,13 @@ section {
     padding: 10px;
     margin: 10px;
     display: inline-block;
-    width: 200px;
     text-align: left;
+}
+.product{
+    width: 32%;
+    @media all and (max-width: 1000px) {
+        width: 80%;
+    }
 }
 
 .fixedP {
@@ -36,6 +41,7 @@ label.highlight {
     width: 200px;
     height: auto;
     margin: 5px 0;
+    filter: unset;
 }
 
 
@@ -75,10 +81,22 @@ label.highlight {
     width: 100%;
 }
 
-img {
+.dishImageHomePage img {
     width: 88%;
     border: 2px solid black;
+    filter: unset;
     @media all and (max-width: 1000px) {
         width: 43%;
+        filter: unset;
     }
+}
+
+.titleWithAddButton, .imageAndEditButton{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.imageAndEditButton{
+    align-items: unset;
+    justify-content: space-between;
 }

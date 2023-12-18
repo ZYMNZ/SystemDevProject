@@ -1,10 +1,11 @@
 <?php
-
+include_once "Models/Dish.php";
 class HomeController{
     function route()
     {
         global $action;
         if ($action=="home"){
+
             self::render($action);
         }
 

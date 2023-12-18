@@ -1,11 +1,15 @@
 <?php
-
+include_once "Models/Dish.php";
 class UserController{
     function route()
     {
         global $action;
 
-        if ($action === "haveAccount" || $action === "client" || $action === "addContact" || $action === "Category" || $action === "editCategory"){
+        if ($action === "haveAccount" || $action === "client" || $action === "addContact"|| $action === "editCategory"){
+            self::render($action);
+        }
+        else if($action === "category"){
+//            $listDishByCategory = Dish::listingDishByCategoryName("");
             self::render($action);
         }
 

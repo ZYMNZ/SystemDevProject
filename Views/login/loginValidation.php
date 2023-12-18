@@ -6,6 +6,7 @@ $result = User::validateUserByUsernamePassword($_POST['username'],md5($_POST['pa
 //var_dump($result);
 
 if ($result){
+    $_SESSION['username'] = $_POST['username'];
     header("Location: ?controller=home&action=home");
 }
 else{

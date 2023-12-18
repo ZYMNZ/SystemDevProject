@@ -9,8 +9,8 @@
 
 </head>
     <nav>
-        <div class="navbar">
-            <img src="Views/images/logo.png" class="navBarFooter" style="border: unset">
+        <div class="navbar navBarFooter">
+            <img src="Views/images/logo.png" style="border: unset">
         </div>
     </nav>
 </html>

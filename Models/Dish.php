@@ -120,12 +120,21 @@ class Dish{
         }
     }
 
+
+    //Get category name by Id then listing category
+    public static function listingDishByCategoryName($pCategoryName) : ?array
+    {
+        $category = Category::getByCategoryName($pCategoryName);
+        return self::listingDishByCategory($category->getCategoryId());
+    }
+
+
     //GETTING DISHED BY CATEGORY
-    public static function listingDishByCategory($categoryId): ?array
+    public static function listingDishByCategory($pCategoryId): ?array
     {
         $conn = openDatabaseConnection();
         $sqlPrepare = $conn->prepare("SELECT * FROM `dish` WHERE category_id = ?");
-        $sqlPrepare->bind_param("i",$categoryId);
+        $sqlPrepare->bind_param("i",$pCategoryId);
         $sqlPrepare->execute();
         $results = $sqlPrepare->get_result();
         $list = [];
@@ -137,7 +146,7 @@ class Dish{
                 $dish->dishTitle = $dishFetchAssoc['dish_title'];
                 $dish->dishDescription = $dishFetchAssoc['dish_description'];
                 $dish->dishImageLocation = $dishFetchAssoc['dish_image_location'];
-                $dish->categoryId = $categoryId;
+                $dish->categoryId = $pCategoryId;
                 $list[] = $dish;
             }
             return $list;
