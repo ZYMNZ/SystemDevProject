@@ -37,20 +37,30 @@
         <div class="product">
             <div class="imageAndEditButton dishImageHomePage">
                 <img src="Views/images/appetizer1.jpg" alt="Appetizer 1" class="">
-                <a ><button>Edit</button></a>
+                <a href="?controller=user&action=listDishes&catId=1"><button>Edit</button></a>
             </div>
             <div class="dishListing">
-                <?php // START LOOP ?>
-
-                <div style="border: 1px solid #000; display: block; margin:5% 0 ">
+                <?php
+                    if (!empty($_SESSION['listOfDishes'])){
+                    foreach ($dataSent['dish'] as $data) :
+                        if ($data->getCategoryId() == 1){ //category 1 = appetizers
+                ?>
+                <div class="dishDiv">
                     <div class="titleWithAddButton">
-                        <h3>Appetizer 1 <?php ?> </h3>
+                        <h3> <?php echo $data->getDishTitle();?> </h3>
                         <button>Add</button>
                     </div>
-                    <p>Description of Appetizer 1. <?php ?></p>
+                    <p> <?php echo $data->getDishDescription()?></p>
                 </div>
 
-                <?php //END LOOP ?>
+                <?php
+                        }
+                        endforeach;
+                    }
+                    else{
+                        echo "<label>Sorry There Isn't Any Appetizers Today!</label>";
+                    }
+                ?>
             </div>
 
         </div>
@@ -62,20 +72,32 @@
         <div class="product">
             <div class="imageAndEditButton dishImageHomePage">
                 <img src="Views/images/main_course1.jpg" alt="Main Course 1">
-                <a ><button>Edit</button></a>
+                <a href="?controller=user&action=listDishes&catId=2"><button>Edit</button></a>
             </div>
             <div class="dishListing">
-                <?php // START LOOP ?>
+                <?php
+                if (!empty($_SESSION['listOfDishes'])){
+                    foreach ($dataSent['dish'] as $data) :
+                       if ($data->getCategoryId() == 2){//category 2 = Main Course
 
-                <div style="border: 1px solid #000; display: block; margin:5% 0 ">
+                ?>
+
+                <div class="dishDiv">
                     <div class="titleWithAddButton">
-                        <h3>Main Course 1 <?php ?> </h3>
+                        <h3><?php echo $data->getDishTitle(); ?> </h3>
                         <button>Add</button>
                     </div>
-                    <p>Description of Main Course 1.</p>
+                    <p><?php echo $data->getDishDescription(); ?></p>
                 </div>
 
-                <?php //END LOOP ?>
+                <?php
+                           }
+                        endforeach;
+                    }
+                    else{
+                        echo "<label>Sorry There Isn't Any Main Courses Today!</label>";
+                    }
+                ?>
             </div>
 
 
@@ -88,20 +110,33 @@
         <div class="product">
             <div class="imageAndEditButton dishImageHomePage">
                 <img src="Views/images/desserts1.jpg" alt="Dessert 1">
-                <a ><button>Edit</button></a>
+                <a href="?controller=user&action=listDishes&catId=3"><button>Edit</button></a>
             </div>
             <div class="dishListing">
-                <?php // START LOOP ?>
+                <?php
+                    if (!empty($_SESSION['listOfDishes'])){
+                     foreach ($dataSent['dish'] as $data) :
+                         if ($data->getCategoryId() == 3){//category 3 = Desserts
 
-                <div style="border: 1px solid #000; display: block; margin:5% 0 ">
+                ?>
+
+                <div class="dishDiv">
                     <div class="titleWithAddButton">
-                        <h3>Dessert 1 <?php ?> </h3>
+                        <h3><?php echo $data->getDishTitle();?></h3>
                         <button>Add</button>
                     </div>
-                    <p>Description of Dessert 1.</p>
+                    <p><?php echo $data->getDishDescription();?></p>
                 </div>
 
-                <?php //END LOOP ?>
+                <?php
+                         }
+                     endforeach;
+                    }
+                    else{
+                        echo "<label>Sorry There Isn't Any Desserts Today!</label>";
+                    }
+
+                ?>
             </div>
 
 
@@ -114,20 +149,32 @@
         <div class="product">
             <div class="imageAndEditButton dishImageHomePage">
                 <img src="Views/images/beverage1.jpg" alt="Beverage 1" style="border-radius: 7pc;border: 2px solid #000;">
-                <a ><button>Edit</button></a>
+                <a href="?controller=user&action=listDishes&catId=4"><button>Edit</button></a>
             </div>
             <div class="dishListing">
-                <?php // START LOOP ?>
+                <?php
+                    if (!empty($_SESSION['listOfDishes'])){
+                        foreach ($dataSent['dish'] as $data) :
+                            if ($data->getCategoryId() == 4){  //category 4 = Beverages
 
-                <div style="border: 1px solid #000; display: block; margin:5% 0 ">
+                ?>
+
+                <div class="dishDiv">
                     <div class="titleWithAddButton">
-                        <h3>Beverage 1 <?php ?> </h3>
+                        <h3><?php echo $data->getDishTitle();?> </h3>
                         <button>Add</button>
                     </div>
-                    <p>Description of Beverage 1.</p>
+                    <p><?php echo $data->getDishDescription();?></p>
                 </div>
 
-                <?php //END LOOP ?>
+                <?php
+                            }
+                        endforeach;
+                    }
+                    else{
+                        echo "<label>Sorry There Isn't Any Beverages Today!</label>";
+                    }
+                ?>
             </div>
         </div>
     </section>

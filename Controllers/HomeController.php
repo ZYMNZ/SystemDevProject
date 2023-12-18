@@ -5,8 +5,8 @@ class HomeController{
     {
         global $action;
         if ($action=="home"){
-
-            self::render($action);
+            $_SESSION['listOfDishes'] = Dish::listAllDishes();
+            self::render($action,["dish"=>$_SESSION['listOfDishes']]);
         }
 
     }

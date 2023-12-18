@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Edit Dish</title>
-    <link rel="stylesheet" type="text/css" href="Views/styles/editCategory.css">
+    <link rel="stylesheet" type="text/css" href="Views/styles/editDish.css">
     <link rel="stylesheet" type="text/css" href="Views/styles/shared.css">
     <?php include_once "Views/shared/navbar.php"?>
 </head>
@@ -35,7 +35,7 @@
 
        <input type="submit" class="submitButton">
    </form>
-   <a href="?controller=user&action=Category"><button class="backgroundColorAndRadius backButtonEditCategory" >Back</button></a>
+   <a href="?controller=user&action=listDishes"><button class="backgroundColorAndRadius backButtonEditCategory" >Back</button></a>
 
    <div style="margin-bottom: 30%"></div>
 </body>

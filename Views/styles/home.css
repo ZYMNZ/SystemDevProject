@@ -100,3 +100,10 @@ label.highlight {
     align-items: unset;
     justify-content: space-between;
 }
+
+.dishDiv{
+    border: 1px solid #000;
+    display: block;
+    margin:5% 0;
+    padding: 2%;
+}

@@ -120,17 +120,35 @@ class Dish{
         }
     }
 
+    //list all dishes
+    public static function listAllDishes()
+    {
+        $conn = openDatabaseConnection();
+        $results = $conn->query("SELECT * FROM `dish`");
+        $list = [];
+        while ($dishFetchAssoc = $results->fetch_assoc()) {
+            $dish = new Dish();
+            $dish->dishId = $dishFetchAssoc['dish_id'];
+            $dish->dishTitle = $dishFetchAssoc['dish_title'];
+            $dish->dishDescription = $dishFetchAssoc['dish_description'];
+            $dish->dishImageLocation = $dishFetchAssoc['dish_image_location'];
+            $dish->categoryId = $dishFetchAssoc['category_id'];
+            $list[] = $dish;
+        }
+        return $list;
+
+    }
 
     //Get category name by Id then listing category
     public static function listingDishByCategoryName($pCategoryName) : ?array
     {
         $category = Category::getByCategoryName($pCategoryName);
-        return self::listingDishByCategory($category->getCategoryId());
+        return self::listingDishByCategoryId($category->getCategoryId());
     }
 
 
     //GETTING DISHED BY CATEGORY
-    public static function listingDishByCategory($pCategoryId): ?array
+    public static function listingDishByCategoryId($pCategoryId): ?array
     {
         $conn = openDatabaseConnection();
         $sqlPrepare = $conn->prepare("SELECT * FROM `dish` WHERE category_id = ?");
