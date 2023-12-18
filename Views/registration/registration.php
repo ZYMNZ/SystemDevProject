@@ -19,7 +19,6 @@
         <!-- signup form -->
         <form id="registrationForm" method="POST" action="?controller=registration&action=registrationValidation">
             <h1>Sign up</h1>
-            <label style="color: black; display: block; font-size: large"><b>Click TWICE</b> on submit <b>AFTER</b> inputs are entered correctly for <u>confirmation</u></label>
             <?php
             if (isset($_SESSION['error']) && $_SESSION['error'] === 'Sorry the USERNAME is taken, try another one!'){
                 echo " <label class='invalidInputLabel'> {$_SESSION['error']} </label>";

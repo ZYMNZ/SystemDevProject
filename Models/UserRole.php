@@ -55,13 +55,13 @@ class UserRole{
     static function createUserRole($pUserId,$pRoleId): bool
     {
         $conn = openDatabaseConnection();
-        $sql = "INSERT INTO `user_role` (user_id,role_id) VALUES (?,?)";
+        $sql = "INSERT INTO `user_role` (user_id,role_id) VALUES (?, ?)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ii",$pUserId,$pRoleId);
         $isSuccessful = $stmt->execute();
+//        var_dump("creatingUserRole :  $isSuccessful");
         $stmt->close();
         $conn->close();
-        var_dump($isSuccessful);
         return $isSuccessful;
     }
 

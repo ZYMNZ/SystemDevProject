@@ -100,11 +100,15 @@ class User{
         $isTaken = self::isUsernameTaken($pPostArray['username']);
         if (!$isTaken) {
             $result = self::createAdmin($pPostArray);
-            if ($result['isSuccessful']) {
+            if ($result["isSuccessful"]) {
                 $role = Role::getRoleByName('admin');
                 return UserRole::createUserRole($result['newRegisteredUserId'], $role->getRoleId());
             }
+            else{
+                var_dump("REGISTRATION OF ADMIN DIDNT GO WELLLLL");
+            }
         }
+        var_dump("REGISTRATION OF ADMIN BA7777");
         return false;
     }
     private static function createAdmin($pPostArray) : array

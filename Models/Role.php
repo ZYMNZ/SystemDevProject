@@ -66,6 +66,8 @@ class Role{
         $stmt->bind_param('s', $pRoleName);
         $stmt->execute();
         $result = $stmt->get_result();
+        var_dump("getRoleName : <br/>");
+        var_dump($result);
         if ($result->num_rows > 0) {
             $role = new Role();
             $result = $result->fetch_assoc();
