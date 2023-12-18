@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="Views/styles/shared.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="Views/General/scripts/errorValidations.js" type="text/javascript"></script>
-    <script src="Views/registration/scripts/registrationValidation.js"></script>
+    <script src="Views/registration/scripts/registrationValidation.js" type="text/javascript"></script>
 
     <?php include_once "Views/shared/navbar.php"?>
 
@@ -17,7 +17,7 @@
 <body>
     <div id="container">
         <!-- signup form -->
-        <form id="registrationForm" method="POST" action="/?controller=registration&action=registrationValidation">
+        <form id="registrationForm" method="POST" action="?controller=registration&action=registrationValidation">
             <h1>Sign up</h1>
             <label style="color: black; display: block; font-size: large"><b>Click TWICE</b> on submit <b>AFTER</b> inputs are entered correctly for <u>confirmation</u></label>
             <?php

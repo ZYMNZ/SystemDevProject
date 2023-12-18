@@ -93,7 +93,8 @@ class User{
         }
     }
 
-    //registering Admin
+    //Registering Admin
+
     public static function registerAdmin($pPostArray): ?bool
     {
         $isTaken = self::isUsernameTaken($pPostArray['username']);
@@ -122,7 +123,7 @@ class User{
         ];
     }
 
-    private static function isUsernameTaken($pUsername): bool  //check if the username is already in the DB
+    public static function isUsernameTaken($pUsername): bool  //check if the username is already in the DB
     {
         $conn = openDatabaseConnection();
         $sql = "SELECT * FROM `user` WHERE username = ?";
@@ -137,7 +138,21 @@ class User{
     }
 
 
+    // FORGET PAGE
+
+    static public function updatePassword($pUsername,$pPassword): bool
+    {
+        $conn = openDatabaseConnection();
+        $sql = "UPDATE `user` SET password = md5(?) WHERE username = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('ss',$pPassword,$pUsername);
+        return $stmt->execute();
+    }
+
+
     // registering Resident
+    // to be done soon
+
 
 
 
@@ -150,10 +165,9 @@ class User{
         $prepareQuery = $conn->prepare($sqlQuery);
         $prepareQuery->bind_param("ss",$pUsername,$pPassword);
         $isSuccessful = $prepareQuery->execute();
-        var_dump($isSuccessful);
-//        if ($isSuccessful) {
+//        var_dump($isSuccessful);
             $results = $prepareQuery->get_result();
-            var_dump($results);
+//            var_dump($results);
             if ($results->num_rows>0){
                 $fetchAssoc = $results->fetch_assoc();
 
@@ -161,18 +175,12 @@ class User{
                 $user->userId = $fetchAssoc['user_id'];
                 $user->username = $fetchAssoc['username'];
                 $user->password = $fetchAssoc['password'];
-                $user->apartment = $fetchAssoc['apartment_num'];
+                $user->apartment = -1;
                 var_dump($user);
                 return $user;
             }
-//        }
         return null;
     }
-
-    //1 we check if data is empty,
-    //2 if not empty => we insert it in the database
-    //3 we need to insert it in the user_usergroup
-        // to do so we need to send the user_id that was created then
 
 
 

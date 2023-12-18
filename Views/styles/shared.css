@@ -43,6 +43,7 @@ form input {
     padding: 8px 14px;
     margin-right:14%;
     width: 100px;
+    font-size: large;
 }
 .backgroundColorAndRadius{
     background-color: #FFCC8F;

@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" type="text/css" href="Views/styles/login.css">
     <link rel="stylesheet" type="text/css" href="Views/styles/shared.css">
-    <script src="Views/login/scripts/validation.js"></script>
+
 
     <?php include_once "Views/shared/navbar.php"?>
 </head>
@@ -16,7 +16,18 @@
 
     <div id="container">
     <!-- login form -->
-        <form id="loginForm" method="POST" action="?controller=login&action=validation">
+        <form id="loginForm" method="POST" action="?controller=login&action=loginValidation">
+            <?php
+            if (isset($_SESSION['error']) && $_SESSION['error'] === 'Username or Password was invalid !'){
+                echo " <label class='invalidInputLabel'> {$_SESSION['error']} </label>";
+                unset($_SESSION['error']);
+            }
+            else if (isset($_SESSION['passwordUpdated']) && $_SESSION['passwordUpdated'] === 'Password Updated Successfully !!'){
+                echo " <label class='invalidInputLabel' style='color: forestgreen'> {$_SESSION['passwordUpdated']} </label>";
+                unset($_SESSION['passwordUpdated']);
+            }
+            ?>
+
             <h1>Login</h1>
             <input type="text" id="loginUsername" name="username" placeholder="Username" class="tFBorderRadiusAndColor" required><br>
             <input type="password" id="loginPassword" name="password" placeholder="Password" class="tFBorderRadiusAndColor" required><br>

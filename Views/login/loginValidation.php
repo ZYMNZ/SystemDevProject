@@ -9,5 +9,6 @@ if ($result){
     header("Location: ?controller=home&action=home");
 }
 else{
+    $_SESSION['error'] = "Username or Password was invalid !";
     header("Location: ?controller=login&action=login");
 }

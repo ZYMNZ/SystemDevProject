@@ -5,10 +5,7 @@ class RegistrationController{
     function route()
     {
         global $action;
-        if ($action === "registration"){
-            self::render($action);
-        }
-        else if ($action === 'registrationValidation'){
+        if ($action === "registration" || $action === 'registrationValidation'){
             self::render($action);
         }
     }
