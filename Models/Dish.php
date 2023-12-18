@@ -6,16 +6,19 @@ class Dish{
     private String $dishTitle;
     private String $dishDescription;
     private String $dishImageLocation;
+    private int $categoryId;
+
 
     public function __construct
     (
         $dishId=-1,
         $dishTitle="",
         $dishDescription="",
-        $dishImageLocation=""
+        $dishImageLocation="",
+        $categoryId=-1
     )
     {
-        self::initialization($dishId,$dishTitle,$dishDescription,$dishImageLocation);
+        self::initialization($dishId,$dishTitle,$dishDescription,$dishImageLocation,$categoryId);
     }
 
     public function getDishId(): int
@@ -58,6 +61,15 @@ class Dish{
         $this->dishImageLocation = $dishImageLocation;
     }
 
+    public function getCategoryId(): int
+    {
+        return $this->categoryId;
+    }
+
+    public function setCategoryId(int $categoryId): void
+    {
+        $this->categoryId = $categoryId;
+    }
 
 
     private function initialization
@@ -65,7 +77,8 @@ class Dish{
         $dishId,
         $dishTitle,
         $dishDescription,
-        $dishImageLocation
+        $dishImageLocation,
+        $categoryId
     )
     {
         if ($dishId<0){
@@ -78,11 +91,13 @@ class Dish{
             && strlen($dishTitle) > 0
             && strlen($dishDescription) > 0
             && strlen($dishImageLocation) > 0
+            && $categoryId > 0
         ){
             $this->dishId = $dishId;
             $this->dishTitle = $dishTitle;
             $this->dishDescription = $dishDescription;
             $this->dishImageLocation = $dishImageLocation;
+            $this->categoryId = $categoryId;
         }
         else if($dishId>0)
         {
@@ -100,8 +115,63 @@ class Dish{
                 $this->dishTitle = $dishFetchAssoc['dish_title'];
                 $this->dishDescription = $dishFetchAssoc['dish_description'];
                 $this->dishImageLocation = $dishFetchAssoc['dish_image_location'];
+                $this->categoryId = $dishFetchAssoc['category_id'];
             }
         }
+    }
+
+    //GETTING DISHED BY CATEGORY
+    public static function listingDishByCategory($categoryId): ?array
+    {
+        $conn = openDatabaseConnection();
+        $sqlPrepare = $conn->prepare("SELECT * FROM `dish` WHERE category_id = ?");
+        $sqlPrepare->bind_param("i",$categoryId);
+        $sqlPrepare->execute();
+        $results = $sqlPrepare->get_result();
+        $list = [];
+        if ($results->num_rows > 0){
+
+            while ($dishFetchAssoc = $results->fetch_assoc()) {
+                $dish = new Dish();
+                $dish->dishId = $dishFetchAssoc['dish_id'];
+                $dish->dishTitle = $dishFetchAssoc['dish_title'];
+                $dish->dishDescription = $dishFetchAssoc['dish_description'];
+                $dish->dishImageLocation = $dishFetchAssoc['dish_image_location'];
+                $dish->categoryId = $categoryId;
+                $list[] = $dish;
+            }
+            return $list;
+        }
+        return null;
+    }
+
+
+
+    // INSERTING INTO DB
+    public static function createDish($pDishTitle, $pDishDescription, $pCategoryId, $pImageLocation=""): bool
+    {
+        $conn = openDatabaseConnection();
+        $sqlPrepare = $conn->prepare("INSERT INTO `dish` (dish_title, dish_description, category_id,dish_image_location) values (?,?,?,?)");
+        $sqlPrepare->bind_param("ssis",$pDishTitle, $pDishDescription, $pCategoryId, $pImageLocation);
+        return $sqlPrepare->execute();
+    }
+
+    //UPDATING DISH TITLE AND DESCRIPTION
+    public static function updateDish($pDishId,$pDishTitle, $pDishDescription)
+    {
+        $conn = openDatabaseConnection();
+        $sqlPrepare = $conn->prepare("UPDATE `dish` SET dish_title = ?, dish_description = ? WHERE dish_id = ?");
+        $sqlPrepare->bind_param("ssi",$pDishId,$pDishTitle, $pDishDescription);
+        return $sqlPrepare->execute();
+    }
+
+    //DELETING DISH BY ID
+    public static function deleteDish($pDishId)
+    {
+        $conn = openDatabaseConnection();
+        $sqlPrepare = $conn->prepare("DELETE FROM `dish` WHERE dish_id = ?");
+        $sqlPrepare->bind_param("i",$pDishId);
+        return $sqlPrepare->execute();
     }
 
 }
