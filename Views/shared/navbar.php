@@ -10,7 +10,7 @@
 </head>
     <nav>
         <div class="navbar">
-            <img src="Views/images/logo.png">
+            <img src="Views/images/logo.png" class="navBarFooter" style="border: unset">
         </div>
     </nav>
 </html>

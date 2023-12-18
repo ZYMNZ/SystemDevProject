@@ -35,9 +35,11 @@
     <section id="appetizers">
         <h2>Appetizers</h2>
         <div class="product">
-            <img src="appetizer1.jpg" alt="Appetizer 1">
-            <h3>Appetizer 1</h3>
-            <p>Description of Appetizer 1.</p>
+            <img src="Views/images/appetizer1.jpg" alt="Appetizer 1">
+            <section>
+                <h3>Appetizer 1</h3>
+                <p>Description of Appetizer 1.</p>
+            </section>
         </div>
     </section>
 
@@ -45,7 +47,7 @@
     <section id="mainCourse">
         <h2>Main Course</h2>
         <div class="product">
-            <img src="main_course1.jpg" alt="Main Course 1">
+            <img src="Views/images/main_course1.jpg" alt="Main Course 1">
             <h3>Main Course 1</h3>
             <p>Description of Main Course 1.</p>
         </div>
@@ -55,7 +57,7 @@
     <section id="dessert">
         <h2>Dessert</h2>
         <div class="product">
-            <img src="dessert1.jpg" alt="Dessert 1">
+            <img src="Views/images/desserts1.jpg" alt="Dessert 1">
             <h3>Dessert 1</h3>
             <p>Description of Dessert 1.</p>
         </div>
@@ -63,9 +65,13 @@
 
     <!-- beverages section -->
     <section id="beverages">
-        <h2>Beverages</h2>
+        <h2 style="">Beverages</h2>
+<!--        <div style="display: inline-flex;align-items: center;justify-content: center;">-->
+<!--        </div>-->
         <div class="product">
-            <img src="beverage1.jpg" alt="Beverage 1">
+        <img src="Views/images/beverage1.jpg" alt="Beverage 1" style="border-radius: 7pc;border: 2px solid #000;">
+
+
             <h3>Beverage 1</h3>
             <p>Description of Beverage 1.</p>
         </div>

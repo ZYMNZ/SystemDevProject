@@ -6,7 +6,7 @@
     padding: 4%;
 }
 
-img {
+.navBarFooter img {
     width: 30%;
 
     @media all and (max-width: 1000px) {
