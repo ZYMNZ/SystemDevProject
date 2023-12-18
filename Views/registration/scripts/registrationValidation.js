@@ -5,7 +5,7 @@ $(document).ready(
 );
 
 function setUpEventHandlers() {
-    var registrationForm = $("#registrationForm");
+    // var registrationForm = $("#registrationForm");
     $("[name='submit']").on("click", function(event) {
 
         var passwordsMatch = doPasswordsMatch();

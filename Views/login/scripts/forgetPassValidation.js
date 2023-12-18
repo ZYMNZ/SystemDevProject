@@ -5,7 +5,7 @@ $(document).ready(
 );
 
 function setUpEventHandlers() {
-    var forgotPasswordForm = $("#forgotPasswordForm");
+    // var forgotPasswordForm = $("#forgotPasswordForm");
     $("[name='submit']").on("click", function(event) {
 
         var passwordsMatch = doPasswordsMatch();
