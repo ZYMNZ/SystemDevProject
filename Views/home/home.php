@@ -30,7 +30,7 @@ unset($_SESSION["catId"]);
     <h3 class="sectionTitle">&</h3>
     <h3 class="sectionTitle">Quick.</h3>
     <figure class="imageContainer">
-        <img style="width: 30%" src="views/images/girlEat.jpg" alt="Girl eating">
+        <img src="views/images/girlEat.jpg" alt="Girl eating">
     </figure>
     <hr class="solid orange">
 

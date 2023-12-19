@@ -24,6 +24,7 @@
 .dishDescription{
     text-align: left;
     font-size: larger;
+    width: fit-content;
 }
 
 .descriptionDiv{

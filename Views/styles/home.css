@@ -91,7 +91,7 @@ label.highlight {
     border: 2px solid black;
     filter: unset;
     @media all and (max-width: 1000px) {
-        width: 200px;
+        width: 50%;
         filter: unset;
     }
 }
