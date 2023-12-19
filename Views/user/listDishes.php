@@ -56,9 +56,10 @@
             unset($_SESSION['dishCreated']);
         }
         ?>
-
+        <!--  Display Category Name  -->
         <h2><?php echo $dataSent['categoryName']->getCategory()?></h2>
 
+        <!--  Display Dish List  -->
         <?php
         if (!empty($dataSent['listOfDishes'])){
         foreach ($dataSent['listOfDishes'] as $data) : ?>
@@ -78,18 +79,12 @@
         else{
             echo " <label class='invalidInputLabel' > No Dishes Added Yet </label>";
         }
-
         ?>
         <?php $_SESSION["catId"] = $_GET['catId'] ?>
 <!--        --><?php //var_dump($_SESSION["catId"]);?>
         <a href="?controller=home&action=home"><button class="backgroundColorAndRadius backButton">Back</button></a>
     </div>
 
-<!--    <script>-->
-<!--        document.getElementById('dishImage').addEventListener('change', function() {-->
-<!--            document.getElementById('selectedImage').innerText = this.files[0].name;-->
-<!--        });-->
-<!--    </script>-->
 
 </body>
 </html>
