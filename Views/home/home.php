@@ -27,9 +27,10 @@ unset($_SESSION["catId"]);
     <p class="fixedP2">We produce pastries and confections “like at home” - without the addition of any preservatives, dyes; formula as close as possible to homemade food.</p>
     <hr class="solid orange">
     <h3 class="sectionTitle">Tasty.</h3>
+    <h3 class="sectionTitle">&</h3>
     <h3 class="sectionTitle">Quick.</h3>
     <figure class="imageContainer">
-        <img src="views/images/girlEat.jpg" alt="Girl eating">
+        <img style="width: 30%" src="views/images/girlEat.jpg" alt="Girl eating">
     </figure>
     <hr class="solid orange">
 
