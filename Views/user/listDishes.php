@@ -59,7 +59,9 @@
 
         <h2><?php echo $dataSent['categoryName']->getCategory()?></h2>
 
-        <?php foreach ($dataSent['listOfDishes'] as $data) : ?>
+        <?php
+        if (!empty($dataSent['listOfDishes'])){
+        foreach ($dataSent['listOfDishes'] as $data) : ?>
             <div class="dishBorder">
                 <label class="dishTitle"><?php echo $data->getDishTitle()?></label>
                 <div style="display: flex; justify-content: space-evenly; ">
@@ -70,7 +72,14 @@
                 <p class="dishDescription"><?php echo $data->getDishDescription()?> </p>
                 </div>
             </div>
-        <?php endforeach;?>
+        <?php
+        endforeach;
+        }
+        else{
+            echo " <label class='invalidInputLabel' > No Dishes Added Yet </label>";
+        }
+
+        ?>
         <?php $_SESSION["catId"] = $_GET['catId'] ?>
 <!--        --><?php //var_dump($_SESSION["catId"]);?>
         <a href="?controller=home&action=home"><button class="backgroundColorAndRadius backButton">Back</button></a>
