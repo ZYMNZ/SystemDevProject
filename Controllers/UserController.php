@@ -8,7 +8,7 @@ class UserController{
     {
         global $action;
 
-        if ($action === "haveAccount" || $action === "client" || $action === "updateDish"|| $action === "deleteDish"){
+        if ($action === "haveAccount" || $action === "client" || $action === "updateDish" || $action === "deleteDish" || $action === "addDish" || $action === "createDish"){
             self::render($action);
         }
         else if($action === "listDishes"){

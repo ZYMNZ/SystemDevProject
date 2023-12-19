@@ -17,7 +17,7 @@
 
 ?>
 
-    <div id="container">
+    <div id="container" style="justify-content: flex-start;">
 
        <!-- <form id="addDishForm" method="POST" action="?controller=dish&action=save" enctype="multipart/form-data">
             <h1>Dish</h1>
@@ -35,6 +35,9 @@
         <h1>Dish</h1>
 <!--        <input type="text" id="dishTitle" name="title" placeholder="Dish Title" class="tFBorderRadiusAndColor" required value="Appetizer" style="text-align: center">-->
 <!--        <br>-->
+        <a href="?controller=user&action=addDish&catId=<?php echo $_GET['catId']?>"><button class="dishButton">Add</button></a>
+
+
         <?php
         if (isset($_SESSION['error']) && $_SESSION['error'] === 'Sorry Something Went Wrong, Try Again !'){
             echo " <label class='invalidInputLabel'> {$_SESSION['error']} </label>";
@@ -48,6 +51,10 @@
             echo " <label class='invalidInputLabel' style='color: forestgreen'> {$_SESSION['dishDeleted']} </label>";
             unset($_SESSION['dishDeleted']);
         }
+        else if (isset($_SESSION['dishCreated']) && $_SESSION['dishCreated'] === 'Dish Added Successfully !!'){
+            echo " <label class='invalidInputLabel' style='color: forestgreen'> {$_SESSION['dishCreated']} </label>";
+            unset($_SESSION['dishCreated']);
+        }
         ?>
 
         <h2><?php $dataSent['categoryName']->getCategory()?></h2>
@@ -55,9 +62,10 @@
         <?php foreach ($dataSent['listOfDishes'] as $data) : ?>
             <div class="dishBorder">
                 <label class="dishTitle"><?php echo $data->getDishTitle()?></label>
-                <a href="?controller=user&action=deleteDish&dishId=<?php echo $data->getDishId()?>&catId=<?php echo $data->getCategoryId()?>"><button class="dishButton">Delete</button></a>
-                <a href="?controller=user&action=editDish&dishId=<?php echo $data->getDishId()?>&catId=<?php echo $data->getCategoryId()?>"><button class="dishButton">Edit</button></a>
-
+                <div style="display: flex; justify-content: space-evenly; ">
+                    <a href="?controller=user&action=deleteDish&dishId=<?php echo $data->getDishId()?>&catId=<?php echo $data->getCategoryId()?>"><button class="dishButton">Delete</button></a>
+                    <a href="?controller=user&action=editDish&dishId=<?php echo $data->getDishId()?>&catId=<?php echo $data->getCategoryId()?>"><button class="dishButton">Edit</button></a>
+                </div>
                 <div class="descriptionDiv">
                 <p class="dishDescription"><?php echo $data->getDishDescription()?> </p>
                 </div>

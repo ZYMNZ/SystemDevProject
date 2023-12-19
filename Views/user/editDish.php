@@ -6,8 +6,10 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Edit Dish</title>
-    <link rel="stylesheet" type="text/css" href="Views/styles/editDish.css">
+    <link rel="stylesheet" type="text/css" href="Views/styles/addAndEditDish.css">
     <link rel="stylesheet" type="text/css" href="Views/styles/shared.css">
+    <link rel="stylesheet" type="text/css" href="Views/styles/navbarFooter.css">
+
     <?php include_once "Views/shared/navbar.php"?>
 </head>
 <body>
