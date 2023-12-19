@@ -1,3 +1,7 @@
+<?php
+unset($_SESSION["catId"]);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

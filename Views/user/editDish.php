@@ -12,7 +12,7 @@
 </head>
 <body>
 
-   <form method="post" action="?controller=user&action=updateDish">
+   <form method="post" action="?controller=user&action=updateDish&catId=<?php echo $_GET['catId']?>">
        <h1 style="margin-top: 10%">Edit Dish</h1>
        <br>
         <div>
@@ -20,7 +20,9 @@
                 Dish Title:
             </label>
             <br>
-            <input type="text" name="dishTitle" value="Soup" class="tFBorderRadiusAndColor">
+            <input type="text" name="dishTitle" value="<?php echo $dataSent['dish']->getDishTitle() ?>" class="tFBorderRadiusAndColor" required>
+            <input type="hidden" name="dishId" value="<?php echo $dataSent['dish']->getDishId() ?>" class="tFBorderRadiusAndColor" required>
+
         </div>
 
         <br>
@@ -30,12 +32,12 @@
                Dish Description:
            </label>
            <br>
-           <textarea  name="dishTitle" style="border-radius: 16px; border-color: #FFCC8F;     border-width: medium;"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</textarea>
+           <textarea  name="dishDescription" style="border-radius: 16px; border-color: #FFCC8F;     border-width: medium;"> <?php echo $dataSent['dish']->getDishDescription() ?></textarea>
        </div>
 
        <input type="submit" class="submitButton">
    </form>
-   <a href="?controller=user&action=listDishes"><button class="backgroundColorAndRadius backButtonEditCategory" >Back</button></a>
+   <a href="?controller=user&action=listDishes&catId=<?php echo $_GET['catId']?>"><button class="backgroundColorAndRadius backButtonEditCategory" >Back</button></a>
 
    <div style="margin-bottom: 30%"></div>
 </body>

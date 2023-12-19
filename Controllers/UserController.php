@@ -1,12 +1,14 @@
 <?php
 include_once "Models/Dish.php";
+include_once "Models/User.php";
 include_once "Models/Category.php";
+include_once "Views/General/session.php";
 class UserController{
     function route()
     {
         global $action;
 
-        if ($action === "haveAccount" || $action === "client"){
+        if ($action === "haveAccount" || $action === "client" || $action === "updateDish"|| $action === "deleteDish"){
             self::render($action);
         }
         else if($action === "listDishes"){
@@ -15,9 +17,10 @@ class UserController{
             self::render($action,["listOfDishes" => $listDishByCategory, "categoryName"=>$categoryName]);
         }
         else if($action === "editDish"){
-
-            self::render($action);
+            $dishInfo = new Dish($_GET['dishId']);
+            self::render($action,["dish"=>$dishInfo]);
         }
+
 
     }
 

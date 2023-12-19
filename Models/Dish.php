@@ -184,16 +184,16 @@ class Dish{
     }
 
     //UPDATING DISH TITLE AND DESCRIPTION
-    public static function updateDish($pDishId,$pDishTitle, $pDishDescription)
+    public static function updateDish($pDishId,$pDishTitle, $pDishDescription): bool
     {
         $conn = openDatabaseConnection();
         $sqlPrepare = $conn->prepare("UPDATE `dish` SET dish_title = ?, dish_description = ? WHERE dish_id = ?");
-        $sqlPrepare->bind_param("ssi",$pDishId,$pDishTitle, $pDishDescription);
+        $sqlPrepare->bind_param("ssi",$pDishTitle,$pDishDescription,$pDishId );
         return $sqlPrepare->execute();
     }
 
     //DELETING DISH BY ID
-    public static function deleteDish($pDishId)
+    public static function deleteDish($pDishId): bool
     {
         $conn = openDatabaseConnection();
         $sqlPrepare = $conn->prepare("DELETE FROM `dish` WHERE dish_id = ?");

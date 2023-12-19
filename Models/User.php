@@ -88,7 +88,7 @@ class User{
                 $this->userId = $userFetchAssoc['user_id'];
                 $this->username = $userFetchAssoc['username'];
                 $this->password = $userFetchAssoc['password'];
-                $this->apartment = $userFetchAssoc['apartment_num'];
+                $this->apartment = $userFetchAssoc['apartment_num'] ?? -1;
             }
         }
     }
