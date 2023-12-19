@@ -112,3 +112,10 @@ label.highlight {
     margin:5% 0;
     padding: 2%;
 }
+
+.searchInput{
+    width: 50%;
+    font-size: large;
+    color: #fda438;
+
+}

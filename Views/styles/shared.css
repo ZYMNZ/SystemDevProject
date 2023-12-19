@@ -76,3 +76,14 @@ form input {
 img{
     filter: unset;
 }
+
+/*shared between listDishes and home page for the search*/
+.uploadButton{
+    width: 15%;
+    border-radius: 25px;
+    background-color: #FFCC8F;
+    @media all and (max-width: 1000px) {
+        border-radius: 25px;
+        width: 40%;
+    }
+}

@@ -201,5 +201,23 @@ class Dish{
         return $sqlPrepare->execute();
     }
 
+    //Search for a dish
+    public static function searchDishByWord($pSearch): ?array
+    {
+        $conn = openDatabaseConnection();
+        $results = $conn->query("SELECT dish_title, dish_description FROM dish WHERE dish_title LIKE '%$pSearch%'");
+        $searchResults = [];
+        if($results->num_rows > 0) {
+            while ($row = $results->fetch_assoc()) {
+                $dish = new Dish();
+                $dish->dishTitle = $row['dish_title'];
+                $dish->dishDescription = $row['dish_description'];
+                $searchResults[] = $dish;
+            }
+            return $searchResults;
+        }
+        return null;
+    }
+
 }
 

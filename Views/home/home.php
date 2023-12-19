@@ -15,6 +15,16 @@ unset($_SESSION["catId"]);
     <?php include_once "Views/shared/navbar.php"?>
 </head>
 <body>
+<!--SEARCHING FORM -->
+<form id="searchDishForm" method="POST" action="?controller=user&action=searchResults">
+    <h1>Search Dish</h1>
+
+    <div id="imageSelection">
+        <input type="text" class="searchInput" name="searchKeyword" required>
+    </div>
+    <br>
+    <input class="uploadButton " type="submit" value="Search">
+</form>
 
 <div class="fixedHome">
 

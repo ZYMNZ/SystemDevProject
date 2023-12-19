@@ -57,7 +57,7 @@
         }
         ?>
 
-        <h2><?php $dataSent['categoryName']->getCategory()?></h2>
+        <h2><?php echo $dataSent['categoryName']->getCategory()?></h2>
 
         <?php foreach ($dataSent['listOfDishes'] as $data) : ?>
             <div class="dishBorder">

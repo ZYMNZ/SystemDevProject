@@ -8,7 +8,8 @@ class UserController{
     {
         global $action;
 
-        if ($action === "haveAccount" || $action === "client" || $action === "updateDish" || $action === "deleteDish" || $action === "addDish" || $action === "createDish"){
+        if ($action === "haveAccount" || $action === "client" || $action === "updateDish" ||
+            $action === "deleteDish" || $action === "addDish" || $action === "createDish"){
             self::render($action);
         }
         else if($action === "listDishes"){
@@ -19,6 +20,13 @@ class UserController{
         else if($action === "editDish"){
             $dishInfo = new Dish($_GET['dishId']);
             self::render($action,["dish"=>$dishInfo]);
+        }
+        else if($action === "searchResults"){
+            $searchResults = Dish::searchDishByWord($_POST['searchKeyword']);
+            self::render($action,['searchResults' => $searchResults]);
+        }
+        else{
+            header("Location: ?controller=error&action=error");
         }
 
 
