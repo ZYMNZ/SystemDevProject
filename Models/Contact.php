@@ -70,7 +70,8 @@ class Contact{
         $this->email = $email;
     }
 
-    private function initialization($contactId,$openingHours,$address,$phoneNum,$email){
+    private function initialization($contactId,$openingHours,$address,$phoneNum,$email):void
+    {
 
         if ($contactId < 0){
             //use the default initialization if nth was send by the param

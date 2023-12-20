@@ -59,7 +59,7 @@ class User{
         $this->apartment = $apartment;
     }
 
-    private function initialization($userId, $username, $password, $apartment)
+    private function initialization($userId, $username, $password, $apartment):void
     {
         if ($userId<0){
             //nothing sent by parameter

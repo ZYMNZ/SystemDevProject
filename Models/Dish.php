@@ -79,7 +79,7 @@ class Dish{
         $dishDescription,
         $dishImageLocation,
         $categoryId
-    )
+    ) : void
     {
         if ($dishId<0){
             //nothing was sent by the param
@@ -121,7 +121,7 @@ class Dish{
     }
 
     //list all dishes
-    public static function listAllDishes()
+    public static function listAllDishes(): array
     {
         $conn = openDatabaseConnection();
         $results = $conn->query("SELECT * FROM `dish`");

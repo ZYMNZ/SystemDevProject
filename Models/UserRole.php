@@ -52,7 +52,7 @@ class UserRole{
         }
     }
 
-    static function createUserRole($pUserId,$pRoleId): bool
+    public static function createUserRole($pUserId,$pRoleId): bool
     {
         $conn = openDatabaseConnection();
         $sql = "INSERT INTO `user_role` (user_id,role_id) VALUES (?, ?)";
