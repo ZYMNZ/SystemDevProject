@@ -1,7 +1,6 @@
 <!--Error Page in case anything happens-->
 
-<!doctype html>
-<html lang="en">
+<html lang="en" style="height: 100%; width: 100%">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -14,16 +13,17 @@
 
     <?php include_once "Views/shared/navbar.php"?>
 </head>
-<body>
-<div class="error">
-    <h2>Oops! Something went wrong.</h2>
-    <p>We're sorry, but it seems like there's an issue with the application.
-        Please try again later.</p>
-</div>
+    <body >
+        <div class="error">
+            <h2>Oops! Something went wrong.</h2>
+            <p>We're sorry, but it seems like there's an issue with the application.
+                Please try again later.</p>
+        </div>
 
-<a href="?controller=user&action=haveAccount"><button class="backgroundColorAndRadius backButton" >Back STAFF</button></a>
-<a href="?controller=user&action=client"><button class="backgroundColorAndRadius backButton" >Back CLIENT</button></a>
+        <a href="?controller=home&action=home"><button class="backgroundColorAndRadius backButton" style="margin: auto;">Home</button></a>
+        <div class="contactEdit" style="display: inline">
+            <?php include_once "Views/shared/footer.php"?>
+        </div>
 
-<?php include_once "Views/shared/footer.php"?>
-</body>
+    </body>
 </html>

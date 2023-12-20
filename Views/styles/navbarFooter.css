@@ -19,7 +19,15 @@
 
 #contact {
     background-color: #eee;
-    padding: 20px;
+    padding: 20px 0;
     text-align: center;
     font-size: larger;
+    width: 100%;
+}
+
+.contactEdit{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
 }

@@ -8,12 +8,12 @@
     <link rel="stylesheet" type="text/css" href="Views/styles/navbarFooter.css">
 
 
-    <section id="contact">
+    <div id="contact">
         <h2>Contact</h2>
-        <p>Opening Hours: 5:00 PM - 7:00 PM</p>
-        <p>Address: 15 Place de la Triade, Pointe-Claire, QC H9R 0A3</p>
-        <p>Phone: +1 (514) 695-6695</p>
-    </section>
+        <p>Opening Hours:<br> 5:00 PM - 7:00 PM</p>
+        <p>Address:<br> 15 Place de la Triade, Pointe-Claire, QC H9R 0A3</p>
+        <p style="margin-bottom: unset">Phone: +1 (514) 695-6695</p>
+    </div>
 
 </head>
 </html>
