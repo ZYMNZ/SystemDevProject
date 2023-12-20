@@ -15,6 +15,11 @@ unset($_SESSION["catId"]);
     <?php include_once "Views/shared/navbar.php"?>
 </head>
 <body>
+
+<form method="post" action="?controller=database&action=print">
+    <button type="submit"> Print DB </button>
+</form>
+
 <!--SEARCHING FORM -->
 <form id="searchDishForm" method="POST" action="?controller=user&action=searchResults">
     <h1>Search Dish</h1>
