@@ -1,5 +1,8 @@
 <?php
 include_once "Models/User.php";
+include_once "Views/General/session.php";
+
+
 
 $result = User::validateUserByUsernamePassword($_POST['username'],md5($_POST['password']));
 
