@@ -1,5 +1,9 @@
 <?php
-unset($_SESSION["catId"]);
+
+    if (empty($_SESSION['username'])){
+        header("Location: ?controller=user&action=login");
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -15,10 +19,16 @@ unset($_SESSION["catId"]);
     <?php include_once "Views/shared/navbar.php"?>
 </head>
 <body>
+<?php //var_dump($_SESSION['username']); ?>
+<div>
+    <a href="?controller=login&action=login"><button style="margin: 6px 0 6px 50%;padding: 8px;"
+                                                     class="backgroundColorAndRadius uploadButton">Logout</button></a>
+</div>
 
 <form method="post" action="?controller=database&action=print">
     <button type="submit"> Print DB </button>
 </form>
+
 
 <!--SEARCHING FORM -->
 <form id="searchDishForm" method="POST" action="?controller=user&action=searchResults">

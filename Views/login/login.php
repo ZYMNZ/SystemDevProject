@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@
     <?php include_once "Views/shared/navbar.php"?>
 </head>
 <body>
-
+<?php //var_dump($_SESSION['username']); ?>
 
     <div id="container">
     <!-- login form -->
@@ -36,5 +36,10 @@
         </form>
         <a href="?controller=user&action=haveAccount"><button class="backgroundColorAndRadius backButton" >Back</button></a>
     </div>
+<?php
+//include_once 'Views/General/session.php';
+//session_unset();
+//session_destroy();
+?>
 </body>
 </html>

@@ -12,7 +12,7 @@ function setUpEventHandlers() {
         var usernameValid = userNameCheckValidation();
 
         // If the passwords match, submit the form
-        if(!passwordsMatch && !usernameValid) {
+        if(!passwordsMatch || !usernameValid) {
             event.preventDefault();
         }
     });

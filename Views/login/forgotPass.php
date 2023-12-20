@@ -13,7 +13,7 @@
     <?php include_once "Views/shared/navbar.php"?>
 </head>
 <body>
-    <div id="container">
+    <div id="container" style="height: 84vh;">
         <!-- forgot password form -->
         <form id="forgotPasswordForm" method="POST" action="/?controller=login&action=forgotPassValidation">
             <h1>Reset Password</h1>
