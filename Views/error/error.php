@@ -20,7 +20,8 @@
                 Please try again later.</p>
         </div>
 
-        <a href="?controller=home&action=home"><button class="backgroundColorAndRadius backButton" style="margin: auto;">Home</button></a>
+        <a href="?controller=home&action=home"><button class="backgroundColorAndRadius backButton homeErrorPage" style="margin: auto;">Home</button></a>
+
         <div class="contactEdit" style="display: inline">
             <?php include_once "Views/shared/footer.php"?>
         </div>
