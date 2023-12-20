@@ -1,9 +1,9 @@
 <?php
 
-    if (empty($_SESSION['username'])){
+    if (!isset($_SESSION['username'])){
         header("Location: ?controller=user&action=login");
     }
-
+//var_dump($_SESSION["catId"]);
 ?>
 
 <!DOCTYPE html>

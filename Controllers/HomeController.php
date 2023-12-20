@@ -6,9 +6,13 @@ class HomeController{
     {
         global $action;
         if ($action=="home"){
-            if (!isset($_SESSION["username"])) header("Location: ?controller=login&action=login");
-            $_SESSION['listOfDishes'] = Dish::listAllDishes();
-            self::render($action,["dish"=>$_SESSION['listOfDishes']]);
+            if (!isset($_SESSION["username"])) {
+                header("Location: ?controller=login&action=login");
+            }
+            else {
+                $_SESSION['listOfDishes'] = Dish::listAllDishes();
+                self::render($action, ["dish" => $_SESSION['listOfDishes']]);
+            }
         }
         else{
             header("Location: ?controller=error&action=error");

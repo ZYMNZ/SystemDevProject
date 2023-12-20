@@ -26,6 +26,10 @@
                 echo " <label class='invalidInputLabel' style='color: forestgreen'> {$_SESSION['passwordUpdated']} </label>";
                 unset($_SESSION['passwordUpdated']);
             }
+            else if (isset($_SESSION['register']) && $_SESSION['register'] === "Congrats, Login Please !"){
+                echo " <label class='invalidInputLabel' style='color: forestgreen'> {$_SESSION['register']} </label>";
+                unset($_SESSION['register']);
+            }
             ?>
 
             <h1>Login</h1>
@@ -37,9 +41,9 @@
         <a href="?controller=user&action=haveAccount"><button class="backgroundColorAndRadius backButton" >Back</button></a>
     </div>
 <?php
-//include_once 'Views/General/session.php';
-//session_unset();
-//session_destroy();
+include_once 'Views/General/session.php';
+session_unset();
+session_destroy();
 ?>
 </body>
 </html>

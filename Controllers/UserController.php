@@ -10,20 +10,45 @@ class UserController{
 
         if ($action === "haveAccount" || $action === "client" || $action === "updateDish" ||
             $action === "deleteDish" || $action === "addDish" || $action === "createDish"){
-            self::render($action);
+            if (!isset($_SESSION["username"])) {
+                header("Location: ?controller=login&action=login");
+            }
+            else {
+                self::render($action);
+            }
         }
         else if($action === "listDishes"){
-            $listDishByCategory = Dish::listingDishByCategoryId($_GET['catId']);
-            $categoryName = new Category($_GET['catId']);
-            self::render($action,["listOfDishes" => $listDishByCategory, "categoryName"=>$categoryName]);
+            if (!isset($_SESSION["username"])) {
+                header("Location: ?controller=login&action=login");
+            }
+
+//            if (!isset($_SESSION["catId"])){
+//                header("Location: ?controller=home&action=home");
+//                var_dump($_SESSION["catId"]);
+//            }
+            else {
+                $listDishByCategory = Dish::listingDishByCategoryId($_GET['catId']);
+                $categoryName = new Category($_GET['catId']);
+                self::render($action, ["listOfDishes" => $listDishByCategory, "categoryName" => $categoryName]);
+            }
         }
         else if($action === "editDish"){
-            $dishInfo = new Dish($_GET['dishId']);
-            self::render($action,["dish"=>$dishInfo]);
+            if (!isset($_SESSION["username"])) {
+                header("Location: ?controller=login&action=login");
+            }
+            else {
+                $dishInfo = new Dish($_GET['dishId']);
+                self::render($action, ["dish" => $dishInfo]);
+            }
         }
         else if($action === "searchResults"){
-            $searchResults = Dish::searchDishByWord($_POST['searchKeyword']);
-            self::render($action,['searchResults' => $searchResults]);
+            if (!isset($_SESSION["username"])) {
+                header("Location: ?controller=login&action=login");
+            }
+            else {
+                $searchResults = Dish::searchDishByWord($_POST['searchKeyword']);
+                self::render($action, ['searchResults' => $searchResults]);
+            }
         }
         else{
             header("Location: ?controller=error&action=error");

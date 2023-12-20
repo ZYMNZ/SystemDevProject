@@ -13,7 +13,7 @@
 </head>
 <body>
 <?php
-//$_SESSION["catId"] = 0;
+
 
 ?>
 
@@ -80,7 +80,7 @@
             echo " <label class='invalidInputLabel' > No Dishes Added Yet </label>";
         }
         ?>
-        <?php $_SESSION["catId"] = $_GET['catId'] ?>
+<!--        --><?php //$_SESSION["catId"] = $_GET['catId'] ?>
 <!--        --><?php //var_dump($_SESSION["catId"]);?>
         <a href="?controller=home&action=home"><button class="backgroundColorAndRadius backButton">Back</button></a>
     </div>

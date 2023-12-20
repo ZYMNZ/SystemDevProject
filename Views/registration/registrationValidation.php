@@ -5,6 +5,7 @@ include_once "Models/User.php";
 //unset($_SESSION['username']);
 $result = User::registerAdmin($_POST);
 if ($result){
+    $_SESSION['register'] = "Congrats, Login Please !";
     header("Location: ?controller=login&action=login");
 }
 else{

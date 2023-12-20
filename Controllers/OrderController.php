@@ -6,7 +6,12 @@ class OrderController{
         global $action;
 
         if ($action="confirmClientOrder"){
-            self::render($action);
+            if (!isset($_SESSION["username"])) {
+                header("Location: ?controller=login&action=login");
+            }
+            else {
+                self::render($action);
+            }
         }
         else{
             header("Location: ?controller=error&action=error");

@@ -11,6 +11,13 @@
 </head>
 <body>
 
+<!--
+
+    CURRENTLY DISABLED !!!
+
+-->
+
+
     <div id="container">
         
         <form id="addContactForm" method="POST" action="?controller=contact&action=save">
