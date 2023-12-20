@@ -86,6 +86,9 @@ class DatabaseController{
             self::printTables();
 //            self::render($action);
         }
+        else{
+            header("Location: ?controller=error&action=error");
+        }
 
     }
 

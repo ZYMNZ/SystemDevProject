@@ -8,6 +8,9 @@ class RegistrationController{
         if ($action === "registration" || $action === 'registrationValidation'){
             self::render($action);
         }
+        else{
+            header("Location: ?controller=error&action=error");
+        }
     }
 
     function render($action, $dataSent=[])

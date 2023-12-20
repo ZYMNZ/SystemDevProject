@@ -7,6 +7,9 @@ class ErrorController{
         if ($action=="error"){
             self::render($action);
         }
+        else{
+            header("Location: ?controller=error&action=error");
+        }
 
     }
 

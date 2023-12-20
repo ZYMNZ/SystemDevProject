@@ -8,6 +8,9 @@ class OrderController{
         if ($action="confirmClientOrder"){
             self::render($action);
         }
+        else{
+            header("Location: ?controller=error&action=error");
+        }
         
     }
 
