@@ -24,8 +24,6 @@ The implementation of this web application will provide several benefits to Lumi
 
 - Data Insights: The system will collect data on customer preferences and order history, enabling the restaurant to make data-driven decisions and offer personalized recommendations. 📊📈📉
 
-## Conclusion 🎉
-This web application project aims to modernize the ordering process at Lumia Residence, making it more convenient for customers and efficient for the restaurant staff. By embracing technology, the restaurant can stay competitive in the digital age and provide a superior dining experience to its patrons. 📲🍽️👏
 
 ## Video 🎥
 
