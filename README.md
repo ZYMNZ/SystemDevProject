@@ -26,3 +26,12 @@ The implementation of this web application will provide several benefits to Lumi
 
 ## Conclusion 🎉
 This web application project aims to modernize the ordering process at Lumia Residence, making it more convenient for customers and efficient for the restaurant staff. By embracing technology, the restaurant can stay competitive in the digital age and provide a superior dining experience to its patrons. 📲🍽️👏
+
+## Video 🎥
+
+https://github.com/ZYMNZ/SystemDevProject/assets/98342638/e6ee832a-c7d8-4d42-8629-2fdad87ec018
+
+
+
+
+
